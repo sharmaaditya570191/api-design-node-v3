@@ -21,11 +21,11 @@ describe('crud controllers', () => {
       }
 
       const res = {
-        status(status) {
+        status (status) {
           expect(status).toBe(200)
           return this
         },
-        json(result) {
+        json (result) {
           expect(result.data._id.toString()).toBe(list._id.toString())
         }
       }
@@ -48,11 +48,11 @@ describe('crud controllers', () => {
       }
 
       const res = {
-        status(status) {
-          expect(status).toBe(400)
+        status (status) {
+          expect(status).toBe(404)
           return this
         },
-        end() {
+        end () {
           expect(true).toBe(true)
         }
       }
@@ -79,11 +79,11 @@ describe('crud controllers', () => {
       }
 
       const res = {
-        status(status) {
+        status (status) {
           expect(status).toBe(200)
           return this
         },
-        json(result) {
+        json (result) {
           expect(result.data).toHaveLength(2)
           result.data.forEach(doc => expect(`${doc.createdBy}`).toBe(`${user}`))
         }
@@ -105,11 +105,11 @@ describe('crud controllers', () => {
       }
 
       const res = {
-        status(status) {
+        status (status) {
           expect(status).toBe(201)
           return this
         },
-        json(results) {
+        json (results) {
           expect(results.data.name).toBe(body.name)
         }
       }
@@ -128,11 +128,11 @@ describe('crud controllers', () => {
       }
 
       const res = {
-        status(status) {
+        status (status) {
           expect(status).toBe(201)
           return this
         },
-        json(results) {
+        json (results) {
           expect(`${results.data.createdBy}`).toBe(`${user}`)
         }
       }
@@ -156,11 +156,11 @@ describe('crud controllers', () => {
       }
 
       const res = {
-        status(status) {
+        status (status) {
           expect(status).toBe(200)
           return this
         },
-        json(results) {
+        json (results) {
           expect(`${results.data._id}`).toBe(`${list._id}`)
           expect(results.data.name).toBe(update.name)
         }
@@ -182,11 +182,11 @@ describe('crud controllers', () => {
       }
 
       const res = {
-        status(status) {
+        status (status) {
           expect(status).toBe(400)
           return this
         },
-        end() {
+        end () {
           expect(true).toBe(true)
         }
       }
@@ -208,11 +208,11 @@ describe('crud controllers', () => {
       }
 
       const res = {
-        status(status) {
+        status (status) {
           expect(status).toBe(200)
           return this
         },
-        json(results) {
+        json (results) {
           expect(`${results.data._id}`).toBe(`${list._id}`)
         }
       }
@@ -230,11 +230,11 @@ describe('crud controllers', () => {
       }
 
       const res = {
-        status(status) {
+        status (status) {
           expect(status).toBe(400)
           return this
         },
-        end() {
+        end () {
           expect(true).toBe(true)
         }
       }
